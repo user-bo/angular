@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "use-material": {
+    "angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -125,5 +125,5 @@
         }
       }
     }},
-  "defaultProject": "use-material"
+  "defaultProject": "angular"
 }
