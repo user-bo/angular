@@ -102,5 +102,36 @@ onpush策略
 
 ## 动态组件
 
+少使用，因为可能会有隐藏bug
+
+## shadowDOM组件
+
+angular有三种方式渲染组件
+
+1.Native: 采用shadowDOM的模式渲染；
+
+2.Emulated 模拟模式: 对于不支持shadowDOM模式的浏览器，angular会采用该模式渲染。这也是angular默认的渲染模式
+
+3.None: 不采用任何模式，直接把HTML和CSS直接插入到DOM流中
+
+```
+@Component({
+  selector: 'app-dyn-comp',
+  encapsulation: ViewEncapsulation.ShadowDom, // 手动开启
+  templateUrl: './dyn-comp.component.html',
+  styleUrls: ['./dyn-comp.component.scss']
+})
+
+// shadowDOM的封装性更好，运行效率也更高，不过目前只有Chrome和Opera，支持得比较好
+// angular会自行检测采用哪种模式渲染，所以一般来说，不用手动指定
+```
+
+## 内容投影组件
+
+@ViewChild @ViewChildren @ContentChild @ContentChildren
+
+## 指令
+根本原因是:我们需要用指令来增强标签的功能，包括 HTML 原生标签和你自 己自定义的标签。比如高亮功能
+
 ### 细化Demo
 组件通讯（父子通讯、兄弟通讯）
